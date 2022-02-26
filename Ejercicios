@@ -1,0 +1,15 @@
+/*1*/
+SELECT E.first_name, E.hire_date, E.salary, D.department_name, J.job_title 
+FROM EMPLOYEES E, DEPARTMENTS D, JOBS J
+WHERE E.DEPARTMENT_ID = D.DEPARTMENT_ID
+AND J.job_id = E.job_id
+AND E.salary < 15000
+AND E.salary >= 4500
+
+/*2*/
+SELECT E.employee_id, E.first_name, O.country_name 
+FROM EMPLOYEES E, COUNTRIES O, JOBS J, DEPARTMENTS D, LOCATIONS L
+WHERE L.country_id = O.country_id
+AND D.location_id = L.location_id
+AND E.DEPARTMENT_ID = D.DEPARTMENT_ID
+AND J.job_id = E.job_id
